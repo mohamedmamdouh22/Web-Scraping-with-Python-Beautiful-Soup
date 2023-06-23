@@ -36,7 +36,10 @@ def main(page):
             }
         )
     df=pd.DataFrame(match_results)
-    df.to_csv('results.csv',index=None)
+    try:
+        df.to_csv('results.csv',index=None)
+    except:
+        print('access denied, please colse the output file')
     print('done')
 
 main(page)
